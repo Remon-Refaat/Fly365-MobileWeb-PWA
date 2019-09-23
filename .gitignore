@@ -1,0 +1,10 @@
+# Comment
+
+/target/*
+/Screenshots/*
+*.jar
+.idea/
+fly365pwa.iml
+.DS_Store
+**/.DS_Store
+test.xml
