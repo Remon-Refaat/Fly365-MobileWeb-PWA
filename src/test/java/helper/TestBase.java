@@ -6,6 +6,8 @@ import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Reporter;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.net.MalformedURLException;
@@ -27,8 +29,14 @@ public class TestBase extends AbstractTestNGCucumberTests {
 //        caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 3 XL 2");
         caps.setCapability(MobileCapabilityType.BROWSER_NAME, MobileBrowserType.CHROME);
         driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"),caps);
-        driver.navigate().to("https://www.fly365stage.com/m/en/");
 
 
     }
+
+    @AfterSuite
+    public void stopDriver() {
+        driver.quit();
+        Reporter.log("=====Browser Session End=====", true);
+    }
+
 }
