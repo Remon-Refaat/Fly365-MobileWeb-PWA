@@ -3,7 +3,7 @@ Feature: My Payment for Logged in User
   Background:
     Given Navigate to "www" Fly365 "stage" site
 
-  @Sign_Out
+#  @Sign_Out
   Scenario: Check that Login user can add traveller
     And Delete payment card "4736140090905479" from database
     And Delete the user "john.smith.fly365pwa@gmail.com" if he exists in the database

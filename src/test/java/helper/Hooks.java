@@ -17,12 +17,12 @@ public class Hooks extends TestBase {
         driver.manage().deleteAllCookies();
     }
 
-    @After("@Sign_Out")
-    public void signout(){
-        String newUrl = driver.getCurrentUrl().replaceAll("(?<=en\\/).*","").concat("account");
-        driver.navigate().to(newUrl);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Logout']/parent::div")));
-        driver.findElement(By.xpath("//span[text()='Logout']/parent::div")).click();
-    }
+//    @After("@Sign_Out")
+//    public void signout(){
+//        String newUrl = driver.getCurrentUrl().replaceAll("(?<=en\\/).*","").concat("account");
+//        driver.navigate().to(newUrl);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Logout']/parent::div")));
+//        driver.findElement(By.xpath("//span[text()='Logout']/parent::div")).click();
+//    }
 
 }

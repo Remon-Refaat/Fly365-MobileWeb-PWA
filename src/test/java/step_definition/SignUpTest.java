@@ -19,7 +19,7 @@ public class SignUpTest extends TestBase {
     By lastNameTXT = By.xpath("//input[@aria-label='Family Name']");
     By emailTXT = By.xpath("//input[@aria-label='Your Email']");
     By passwordTXT = By.xpath("//input[@aria-label='Password']");
-    By registerBTN = By.xpath("//div[text()='Register']");
+    By registerBTN = By.xpath("//div[text()='Register']/parent::button");
 
 
 
@@ -47,6 +47,8 @@ public class SignUpTest extends TestBase {
 
     @And("^Click on Register button$")
     public void clickOnRegisterButton()  {
+        driver.hideKeyboard();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(registerBTN));
         driver.findElement(registerBTN).click();
     }
 

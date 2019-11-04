@@ -37,7 +37,7 @@ public class HomeTest extends TestBase {
 
     @Given("^Navigate to \"(.*)\" Fly365 \"(.*)\" site$")
     public void NavigateToFly365Site(String store, String site) {
-        driver.navigate().to("https://"+store+".fly365"+site+".com/");
+        driver.navigate().to("https://"+store+".fly365"+site+".com/m/en/");
     }
 
     @Given("^Select One Way trip$")

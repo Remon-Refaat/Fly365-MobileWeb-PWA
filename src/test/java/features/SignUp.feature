@@ -3,7 +3,7 @@ Feature: Sign Up Page
   Background:
     Given Navigate to "www" Fly365 "stage" site
 
-  @Sign_Out
+#  @Sign_Out
   Scenario: Verify that Verify your email is sent successfully
     And Delete the user "john.smith.fly365pwa@gmail.com" if he exists in the database
     And Open the main menu
