@@ -51,7 +51,7 @@ public class PaymentTest extends TestBase {
 
 
     @And("^Press on Pay button$")
-    public void pressOnPayButton()  {
+    public void pressOnPayButton() {
         driver.findElement(payNowBTN).click();
     }
 

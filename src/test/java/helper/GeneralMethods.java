@@ -15,7 +15,7 @@ public class GeneralMethods extends TestBase {
         return date;
     }
 
-    public void selectDateFromDDL(By option, String value){
+    public void selectDateFromDDL(By option, String value) {
         Select dayDDL = new Select(driver.findElement(option));
         dayDDL.selectByValue(value);
     }

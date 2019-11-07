@@ -21,9 +21,9 @@ public class MainMenuTest extends TestBase {
     }
 
     @And("^Press on \"(.*)\"$")
-    public void pressOn(String linkName)  {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='"+linkName+"']/ancestor::a")));
-        driver.findElement(By.xpath("//p[text()='"+linkName+"']")).click();
+    public void pressOn(String linkName) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='" + linkName + "']/ancestor::a")));
+        driver.findElement(By.xpath("//p[text()='" + linkName + "']")).click();
 
     }
 

@@ -3,7 +3,7 @@ Feature: Manage my Booking
   Background:
     Given Navigate to "www" Fly365 "stage" site
 
-    Scenario: Verify that the anonymous user can retrieve his/her booking via Fly365 Reference
+  Scenario: Verify that the anonymous user can retrieve his/her booking via Fly365 Reference
     And Book a trip from API for "stage"
     And Get Fly365 Reference for the trip
     And Open the main menu

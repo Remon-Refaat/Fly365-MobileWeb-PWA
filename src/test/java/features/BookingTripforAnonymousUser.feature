@@ -18,8 +18,8 @@ Feature: Booking a Trip for Anonymous User
       | Mr    | John       | William     | Smith     | 15  | February | 1985 |
 
     And Add the following data in the Contact Details
-      | Title | First Name | Last Name | Email                        | Phone Country | Phone Number|
-      | Mr    | John      | Smith      | john.smith.fly365pwa@gmail.com  |Ireland          | 12345678      |
+      | Title | First Name | Last Name | Email                          | Phone Country | Phone Number |
+      | Mr    | John       | Smith     | john.smith.fly365pwa@gmail.com | Ireland       | 12345678     |
     And Click on Next Step
     And Add a valid data for the credit card
       | Card Holder Number | Card Number         | Card Expire Date | Card CVV |

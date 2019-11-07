@@ -22,8 +22,6 @@ public class SignUpTest extends TestBase {
     By registerBTN = By.xpath("//div[text()='Register']/parent::button");
 
 
-
-
     @And("^Press on Sign in or register now button$")
     public void pressOnSignInOrRegisterNowButton() {
         driver.findElement(signInRegisterBTN).click();
@@ -46,12 +44,11 @@ public class SignUpTest extends TestBase {
     }
 
     @And("^Click on Register button$")
-    public void clickOnRegisterButton()  {
+    public void clickOnRegisterButton() {
         driver.hideKeyboard();
         wait.until(ExpectedConditions.visibilityOfElementLocated(registerBTN));
         driver.findElement(registerBTN).click();
     }
-
 
 
 }

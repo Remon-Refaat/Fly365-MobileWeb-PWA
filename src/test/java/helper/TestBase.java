@@ -22,13 +22,13 @@ public class TestBase extends AbstractTestNGCucumberTests {
     public void startDriver() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
 
-        caps.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"5.1");
-        caps.setCapability(MobileCapabilityType.DEVICE_NAME,"OPPO F1s");
+        caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "5.1");
+        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "OPPO F1s");
 //        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9");
 //        caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 3 XL 2");
         caps.setCapability(MobileCapabilityType.BROWSER_NAME, MobileBrowserType.CHROME);
-        driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"),caps);
+        driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
 
 
     }

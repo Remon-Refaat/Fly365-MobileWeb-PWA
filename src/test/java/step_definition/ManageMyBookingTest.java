@@ -1,9 +1,7 @@
 package step_definition;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import helper.APIUtility;
 import helper.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,7 +27,7 @@ public class ManageMyBookingTest extends TestBase {
     }
 
     @And("^Add a valid Fly365 Reference$")
-    public void addAValidFly365Reference()  {
+    public void addAValidFly365Reference() {
         driver.findElement(manageMyBookingRefTXT).sendKeys(apiTestObject.fly365Reference);
     }
 
@@ -41,7 +39,7 @@ public class ManageMyBookingTest extends TestBase {
 
 
     @Then("^The system will retrieve the details of the Booking Correctly$")
-    public void theSystemWillRetrieveTheDetailsOfTheBookingForThis()  {
+    public void theSystemWillRetrieveTheDetailsOfTheBookingForThis() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(flyReferenceHDR));
         String actualNumber = driver.findElement(flyReferenceNumberHDR).getText();
         Assert.assertEquals(actualNumber, apiTestObject.fly365Reference);

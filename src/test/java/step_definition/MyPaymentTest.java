@@ -24,7 +24,7 @@ public class MyPaymentTest extends TestBase {
     By SaveBTN = By.xpath("//div[text()='Save']/parent::button/parent::div");
 
     @And("^Press on add payment button$")
-    public void pressOnAddPaymentButton()  {
+    public void pressOnAddPaymentButton() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(addCardBTN));
         driver.findElement(addCardBTN).click();
     }
@@ -52,9 +52,9 @@ public class MyPaymentTest extends TestBase {
 
     @And("^Card is added successfully$")
     public void cardIsAddedSuccessfully() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='"+cardHolder+"']/following-sibling::span")));
-        String actualNumber = driver.findElement(By.xpath("//h3[text()='"+cardHolder+"']/following-sibling::span")).getText();
-        Assert.assertEquals(actualNumber.substring(actualNumber.length()-4), cardNumber.substring(cardNumber.length()-4));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='" + cardHolder + "']/following-sibling::span")));
+        String actualNumber = driver.findElement(By.xpath("//h3[text()='" + cardHolder + "']/following-sibling::span")).getText();
+        Assert.assertEquals(actualNumber.substring(actualNumber.length() - 4), cardNumber.substring(cardNumber.length() - 4));
     }
 
 

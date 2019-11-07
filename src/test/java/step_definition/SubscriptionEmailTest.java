@@ -1,7 +1,6 @@
 package step_definition;
 
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import helper.TestBase;
 import org.openqa.selenium.By;

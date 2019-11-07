@@ -34,20 +34,19 @@ public class HomeTest extends TestBase {
     By searchNowBTN = By.xpath("//button/div[text()='search now']");
 
 
-
     @Given("^Navigate to \"(.*)\" Fly365 \"(.*)\" site$")
     public void NavigateToFly365Site(String store, String site) {
-        driver.navigate().to("https://"+store+".fly365"+site+".com/m/en/");
+        driver.navigate().to("https://" + store + ".fly365" + site + ".com/m/en/");
     }
 
     @Given("^Select One Way trip$")
-    public void selectOneWayTrip(){
+    public void selectOneWayTrip() {
         driver.findElement(oneWayTAB).click();
     }
 
 
     @And("^Add airport to the Origin \"(.*)\"$")
-    public void addAirportToTheOrigin(String originAirport)  {
+    public void addAirportToTheOrigin(String originAirport) {
         driver.findElement(originTXT).click();
         driver.findElement(origingSearchFieldTXT).sendKeys(originAirport);
         wait.until(ExpectedConditions.visibilityOfElementLocated(airportSearchResult));
@@ -55,7 +54,7 @@ public class HomeTest extends TestBase {
     }
 
     @And("^Add airport to the Destination \"(.*)\"$")
-    public void addAirportToTheDestination(String originAirport)  {
+    public void addAirportToTheDestination(String originAirport) {
         driver.findElement(destinationTXT).click();
         driver.findElement(destinationSearchFieldTXT).sendKeys(originAirport);
         wait.until(ExpectedConditions.visibilityOfElementLocated(airportSearchResult));
@@ -67,14 +66,13 @@ public class HomeTest extends TestBase {
     public void selectTheDateOfTheDepartureAfterDayFromToday(int period) throws InterruptedException {
         driver.findElement(departureCalenderDPK).click();
         String departureDate = gmObject.addDateWithCertainPeriodAndFormat(period, "yyyy-MM-dd");
-        if (driver.findElement(By.xpath("//button[@date='"+departureDate+"']")).isDisplayed()){
-            driver.findElement(By.xpath("//button[@date='"+departureDate+"']")).click();
-        }
-        else {
+        if (driver.findElement(By.xpath("//button[@date='" + departureDate + "']")).isDisplayed()) {
+            driver.findElement(By.xpath("//button[@date='" + departureDate + "']")).click();
+        } else {
             wait.until(ExpectedConditions.visibilityOfElementLocated(calendarArrowBTN));
-        driver.findElement(calendarArrowBTN).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@date='"+departureDate+"']")).click();
+            driver.findElement(calendarArrowBTN).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//button[@date='" + departureDate + "']")).click();
         }
         driver.findElement(calendarSaveBTN).click();
     }
@@ -103,7 +101,7 @@ public class HomeTest extends TestBase {
     }
 
     @And("^Select \"(.*)\" Class$")
-    public void selectClass(String cabinClass)  {
+    public void selectClass(String cabinClass) {
         driver.findElement(passengerCabinPOPOVER).click();
         driver.findElement(By.xpath("//label[text()='" + cabinClass + "']/preceding-sibling::div")).click();
         driver.findElement(cabinClassSaveBTN).click();
@@ -113,7 +111,6 @@ public class HomeTest extends TestBase {
     public void pressOnSearchNow() {
         driver.findElement(searchNowBTN).click();
     }
-
 
 
 }

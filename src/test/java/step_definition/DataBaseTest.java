@@ -1,6 +1,5 @@
 package step_definition;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import helper.DataBase;
 import helper.TestBase;
@@ -9,12 +8,12 @@ public class DataBaseTest extends TestBase {
 
     @And("^Delete the user \"(.*)\" if he exists in the database$")
     public void deleteTheUserIfHeExistsInTheDatabase(String userEmail) {
-            DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "user_api", "delete from users where \"email\"='" +userEmail+ "' ");
+        DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "user_api", "delete from users where \"email\"='" + userEmail + "' ");
     }
 
     @And("^Delete the subscribed user \"(.*)\" if he exists in the database$")
     public void deleteTheSubscribedUserIfHeExistsInTheDataBase(String userEmail) {
-            DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "user_api", "delete from newsletter_users where email='" + userEmail + "'");
+        DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "user_api", "delete from newsletter_users where email='" + userEmail + "'");
     }
 
     @And("^Insert new user at database \"(.*)\" \"(.*)\"$")
@@ -24,15 +23,15 @@ public class DataBaseTest extends TestBase {
 
     @And("^Delete payment card \"(.*)\" from database$")
     public void deletePaymentCardFromDatabase(String creditCardNumber) {
-            DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "payment_api", "delete from user_cards where \"email\" = 'john.smith.fly365pwa@gmail.com' and \"lastFourDigits\" = '"+creditCardNumber.substring(creditCardNumber.length()-4)+"'");
+        DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "payment_api", "delete from user_cards where \"email\" = 'john.smith.fly365pwa@gmail.com' and \"lastFourDigits\" = '" + creditCardNumber.substring(creditCardNumber.length() - 4) + "'");
     }
 
     @And("^Delete traveller \"([^\"]*)\" from database$")
-    public void deleteTravellerFromDatabase(String travellerName)  {
+    public void deleteTravellerFromDatabase(String travellerName) {
 
-        String firstName = travellerName.replaceAll("\\s\\w*\\s\\w*","");
-        String lastName = travellerName.replaceAll("\\w*\\s\\w*\\s","");
-        DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "payment_api", "delete from travellers where \"firstName\" = '"+firstName+"' and \"lastName\" = '"+lastName+"'");
+        String firstName = travellerName.replaceAll("\\s\\w*\\s\\w*", "");
+        String lastName = travellerName.replaceAll("\\w*\\s\\w*\\s", "");
+        DataBase.execute_query_dbs("k8stage1.cl9iojf4kdop.eu-west-1.rds.amazonaws.com:5432", "payment_api", "delete from travellers where \"firstName\" = '" + firstName + "' and \"lastName\" = '" + lastName + "'");
 
     }
 }

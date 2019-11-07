@@ -18,7 +18,7 @@ public class MyProfileTest extends TestBase {
 
 
     @Then("^The user profile of \"(.*)\" is opened successfully$")
-    public void theUserProfileOfIsOpenedSuccessfully(String profileName)  {
+    public void theUserProfileOfIsOpenedSuccessfully(String profileName) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(myProfileHDR));
         Assert.assertEquals(driver.findElement(myProfileHDR).getText().toUpperCase(), profileName.toUpperCase());
     }

@@ -11,6 +11,7 @@ public class FlightDetailsTest extends TestBase {
     WebDriverWait wait = new WebDriverWait(driver, 15);
 
     By continueBTN = By.xpath("//button/child::div[text()='Continue']");
+
     @And("^Press on Continue Button")
     public void pressonContinueButton() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(continueBTN));

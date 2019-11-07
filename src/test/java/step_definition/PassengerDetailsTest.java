@@ -37,33 +37,33 @@ public class PassengerDetailsTest extends TestBase {
         wait.until(ExpectedConditions.visibilityOfElementLocated(passengerFNTXT));
 
 
-            int i = 1;
+        int i = 1;
 
-            for (Map<String, String> passengerDetails : passengerData.asMaps(String.class, String.class)) {
+        for (Map<String, String> passengerDetails : passengerData.asMaps(String.class, String.class)) {
 
-                if (HomeTest.totalPassengersNumber > 1){
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='passengers']/div/div/div["+i+"]")));
-                    driver.findElement(By.xpath("//*[@id='passengers']/div/div/div["+i+"]")).click();
+            if (HomeTest.totalPassengersNumber > 1) {
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='passengers']/div/div/div[" + i + "]")));
+                driver.findElement(By.xpath("//*[@id='passengers']/div/div/div[" + i + "]")).click();
 
-                }
+            }
 
-                wait.until(ExpectedConditions.visibilityOfElementLocated(passengerFNTXT));
-                driver.findElement(passengerFNTXT).sendKeys(passengerDetails.get("First Name"));
-                driver.findElement(By.xpath("//div[contains(@class,'passenger-form')]//input[@aria-label='"+passengerDetails.get("Title")+"']/parent::div")).click();
-                driver.findElement(passengerMNTXT).sendKeys(passengerDetails.get("Middle Name"));
-                driver.findElement(passengerLNTXT).sendKeys(passengerDetails.get("Last Name"));
-                gmObject.selectDateFromDDL(passengerDayDDL, passengerDetails.get("Day"));
-                driver.findElement(passengerMonthDDL).click();
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'passenger-form')]//select[@placeholder='Month']/option[@label='"+passengerDetails.get("Month")+"']")));
-                driver.findElement(By.xpath("//div[contains(@class,'passenger-form')]//select[@placeholder='Month']/option[@label='"+passengerDetails.get("Month")+"']")).click();
-                gmObject.selectDateFromDDL(passengerYearDDL,passengerDetails.get("Year"));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(passengerFNTXT));
+            driver.findElement(passengerFNTXT).sendKeys(passengerDetails.get("First Name"));
+            driver.findElement(By.xpath("//div[contains(@class,'passenger-form')]//input[@aria-label='" + passengerDetails.get("Title") + "']/parent::div")).click();
+            driver.findElement(passengerMNTXT).sendKeys(passengerDetails.get("Middle Name"));
+            driver.findElement(passengerLNTXT).sendKeys(passengerDetails.get("Last Name"));
+            gmObject.selectDateFromDDL(passengerDayDDL, passengerDetails.get("Day"));
+            driver.findElement(passengerMonthDDL).click();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'passenger-form')]//select[@placeholder='Month']/option[@label='" + passengerDetails.get("Month") + "']")));
+            driver.findElement(By.xpath("//div[contains(@class,'passenger-form')]//select[@placeholder='Month']/option[@label='" + passengerDetails.get("Month") + "']")).click();
+            gmObject.selectDateFromDDL(passengerYearDDL, passengerDetails.get("Year"));
 
-                if (HomeTest.totalPassengersNumber > 1){
-                    driver.findElement(saveBTN).click();
+            if (HomeTest.totalPassengersNumber > 1) {
+                driver.findElement(saveBTN).click();
 
-                }
+            }
 
-                i++;
+            i++;
 
         }
 
@@ -73,17 +73,17 @@ public class PassengerDetailsTest extends TestBase {
     @And("^Add the following data in the Contact Details$")
     public void addTheFollowingDataInTheContactDetails(DataTable contactData) {
 
-        for (Map<String,String> contactDetails : contactData.asMaps(String.class,String.class)){
+        for (Map<String, String> contactDetails : contactData.asMaps(String.class, String.class)) {
 
             driver.findElement(contactFirstNameTXT).sendKeys(contactDetails.get("First Name"));
-            driver.findElement(By.xpath("//form[@id='contactDetails']//label[text()='"+contactDetails.get("Title")+"']/preceding-sibling::div")).click();
+            driver.findElement(By.xpath("//form[@id='contactDetails']//label[text()='" + contactDetails.get("Title") + "']/preceding-sibling::div")).click();
             driver.findElement(contactLastNameTXT).sendKeys(contactDetails.get("Last Name"));
             driver.findElement(contactEmailAddressTXT).sendKeys(contactDetails.get("Email"));
             driver.findElement(contactPhoneCountryTXT).click();
             wait.until(ExpectedConditions.visibilityOfElementLocated(contactPhoneCountrySearchTXT));
             driver.findElement(contactPhoneCountrySearchTXT).sendKeys(contactDetails.get("Phone Country"));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='"+contactDetails.get("Phone Country")+"']")));
-            driver.findElement(By.xpath("//span[text()='"+contactDetails.get("Phone Country")+"']")).click();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='" + contactDetails.get("Phone Country") + "']")));
+            driver.findElement(By.xpath("//span[text()='" + contactDetails.get("Phone Country") + "']")).click();
             driver.findElement(contactPhoneNumberTXT).sendKeys(contactDetails.get("Phone Number"));
 
         }
